@@ -1,0 +1,455 @@
+/* Main and menu Styles */
+
+* {
+	box-sizing: border-box;
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 25px;
+}
+
+:root {
+	--main-box-color: #eee;
+	--main-button-color: #D9D9D9;
+	--main-hover-color: #ccc;
+	--main-text-color: black;
+}
+
+.background-effect {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, #2C3E50, #FD746C, #00C9FF, #a044ff);
+  background-repeat: no-repeat;
+  background-size: 1000% 1000%;
+}
+
+body {
+	background-image: url(Images/Owl-on-a-tree-branch-one-line-art-Graphics-42376571-1.jpg);
+	background-repeat: no-repeat;
+	background-position-x: 1250px;
+	background-position-y: 500px;
+	background-size: 500px;
+	display: flex;
+	flex-direction: row;
+}
+
+.nav-item {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	padding-top: 5px;
+	background-color: var(--main-box-color);
+	border: 1px solid black;
+	border-radius: 20px;
+	box-shadow: 1px 5px 10px 5px rgb(202, 201, 201);
+	width: 250px;
+	height: 40px;
+	margin-top: 30px;
+}
+
+.menu {
+	font-weight: 800;
+}
+
+.is-active {
+	font-style: oblique;
+	text-shadow: 0.5px 0.5px 0.5px black;
+}
+
+a {
+	color: currentcolor;
+	text-decoration: none;
+}
+
+.ds {
+	text-align: center;
+	padding: 5px;
+	margin-top: 50px;
+	margin-left: 100px;
+	width: 700px;
+	height: 40px;
+	background-color: var(--main-box-color);
+	border: 1px solid black;
+	border-radius: 20px;
+	box-shadow: 1px 5px 10px 5px rgb(202, 201, 201);
+	animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgb(202, 201, 201);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgb(202, 201, 201);
+		transform: translatey(-20px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgb(202, 201, 201);
+		transform: translatey(0px);
+	}
+}
+
+/* Accordion Styles */
+
+input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.tab {
+  width: 550px;
+  border: 1px solid black;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 1px 5px 10px 5px rgb(202, 201, 201);
+  margin-left: 100px;
+  margin-top: 100px;
+}
+
+.tab-label {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 60px;
+  padding-top: 5px;
+  height: 40px;
+  width: 550px;
+  background: var(--main-box-color);
+  color: black;
+  font-family: 'Courier New', Courier, monospace;
+  cursor: pointer;
+}
+
+.tab-label:hover {
+  background: var(--main-hover-color);
+}
+
+.tab-label::after {
+  content: "❯";
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  padding-right: 10px;
+  transition: all 0.35s;
+}
+
+.tab-content {
+  max-height: 0;
+  padding: 0 1em;
+  color: black;
+  background: var(--main-box-color);
+  transition: all 0.35s;
+}
+
+.tab-close:hover {
+  background:var(--main-hover-color);
+}
+
+input:checked + .tab-label {
+  background: var(--main-hover-color);
+}
+
+input:checked + .tab-label::after {
+  transform: rotate(90deg);
+}
+
+input:checked ~ .tab-content {
+  max-height: 100vh;
+  padding: 1em;
+}
+
+
+/* Breadcrumb Styles */
+
+.house, .igloo, .bee, .chicken {
+	border: 1px solid black;
+	border-radius: 50px;
+	padding: 0.3rem 0.2rem 0.1rem 0.2rem;
+}
+
+.breadcrumb-line {
+	display: flex;
+	width: 850px;
+	height: 40px;
+	border: 1px solid black;
+	border-radius: 20px;
+	box-shadow: 1px 5px 10px 5px rgb(202, 201, 201);
+	margin-left: 100px;
+	margin-top: 170px;
+	background-color: var(--main-box-color)
+}
+
+.circle {
+	padding-right: 160px;
+}
+
+svg {
+	padding-top: 0.2rem;
+}
+
+.text {
+	font-size: 15px;
+	margin:auto;
+	margin-right: 30px;
+	margin-left: -150px;
+	white-space: nowrap;
+}
+
+.sorry {
+		padding-top: 20px;
+}
+.sorry-not-sorry, .sorry {
+	font-style: italic;
+	font-size: 20px;
+	padding-left: 100px;
+}
+
+/* Button Styles */
+
+
+.glow {
+    width: 250px;
+    height: 40px;
+	margin-left: 100px;
+	margin-top: 240px;
+    border: none;
+    outline: none;
+    color: black;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 20px;
+}
+
+.glow:before {
+    content: '';
+    background: linear-gradient(45deg, #c6c5c5, #77aaff, #fafaff, #03388a, #99ccff, #bbeeff, #5588ff, #fafaff, #3366ff);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow:active:after {
+    background: transparent;
+}
+
+.glow:hover:before {
+    opacity: 1;
+}
+
+.glow:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--main-box-color);
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+
+#popup {
+	background-color: var(--main-box-color);
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+	border-radius: 20px;
+	box-shadow: 1px 5px 10px 5px rgb(202, 201, 201);
+	color: black;
+	overflow: hidden;
+	text-align: center;
+	margin-top: 240px;
+	margin-left: 150px;
+}
+
+#popup-box {
+	position: relative;
+}
+
+.close-button {
+	position: absolute;
+}
+
+#popup:not(:target) {
+	visibility: hidden;
+	opacity: 0;
+}
+
+#small-button {
+	margin-top: 10px;
+	padding: 5px;
+	background-color: #a044ff;
+	border: 1px solid black;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+
+
+/* Checkbox Styles : inputstyles.css - Input are already hidden in Accordion Styles */
+
+/* Modal Styles */
+
+.modal-button{
+	width: 550px;
+	height: 40px;
+	background-color: var(--main-box-color);
+	border: 1px solid black;
+	border-radius: 20px;
+	box-shadow: 1px 5px 10px 5px rgb(202, 201, 201);
+	margin-left: 100px;
+	margin-top: 380px;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 200px;
+    width: 100%; 
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.adjective {
+font-style: italic;
+}
+
+.modal-content {
+    background-color: var(--main-box-color);
+    margin: auto;
+    padding: 20px;
+    border: 1px solid black;
+	border-radius: 20px;
+    width: 1000px;
+	height: 400px;
+}
+
+.close {
+    float: right;
+}
+
+.close:hover, .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Password Styles :inputstyles.css */
+
+/* Search Styles : inputstyles.css */
+
+/* Select Styles */
+
+
+.select-group {
+	position: absolute;
+	width: 550px;
+	height: 40px;
+	margin-top: 590px;
+	margin-left: 350px;
+  }
+
+  #believe {
+	background-color: var(--main-box-color);
+	border: 1px solid black;
+  }
+
+
+  /* Toast Styles */
+
+  .fav-toast {
+	background-color: var(--main-box-color);
+	width: 600px;
+	height: 40px;
+	border: 1px solid black;
+	border-radius: 20px;
+	box-shadow: 1px 5px 10px 5px rgb(202, 201, 201);
+	margin-left: 100px;
+	margin-top: 733px;
+  }
+
+  .swirl {
+	width: 500px;
+	height: 40px;
+	text-align: center;
+	padding: 5px;
+	background-color: var(--main-box-color);
+	border: 1px solid;
+	box-shadow: 1px 5px 10px 5px rgb(202, 201, 201);
+	border-radius: 20px;
+  }
+
+  .bended-arrow {
+	position: absolute;
+	left: 60%;
+	rotate: -65deg;
+	color: var(--main-box-color);
+	margin-top: 250px;
+	animation: arrow 4s infinite alternate;
+  }
+
+  @keyframes arrow {
+	50% {
+		transform: rotate(25deg);
+	}
+}
+
+
+  #toast {
+    visibility: hidden;
+    text-align: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;right:0;
+    bottom: 80px;
+    font-size: 17px;
+    white-space: nowrap;
+}
+
+#toast #desc {
+	background-color: var(--main-box-color);
+	width: 1050px;
+	height: 40px;
+	border: 1px solid black;
+	border-radius: 20px;
+	box-shadow: 1px 5px 10px 5px rgb(202, 201, 201);
+	color: black;
+	padding-bottom: 10px;
+	overflow: hidden;
+	text-align: center;
+	white-space: nowrap;
+}
+
+#toast.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s,stay 3s 1s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s,stay 3s 1s, fadeout 0.5s 4.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 80px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 80px; opacity: 1;} 
+    to {bottom: 0px; opacity: 0;}
+}
