@@ -6,3 +6,6 @@
 * Played with animations and colors
 * Found some quotes online
 * Used Iconify in Figma and website
+
+Link to Netlify:
+https://lively-puppy-33cfa1.netlify.app
